@@ -1,0 +1,20 @@
+project_name: techwhen
+
+containers:
+  build-env:
+    build_directory: .
+    volumes:
+      - local: .
+        container: /usr/src/app
+        options: cached
+    working_directory: /usr/src/app
+
+tasks: 
+  run:
+    description: Runs the application
+    run:
+      container: build-env
+      command: yarn start
+      ports:
+        - local: 3000
+          container: 3000
