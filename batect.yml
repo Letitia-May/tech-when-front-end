@@ -11,10 +11,20 @@ containers:
 
 tasks: 
   run:
-    description: Runs the application
+    description: Runs the app
     run:
       container: build-env
       command: yarn start
       ports:
         - local: 3000
           container: 3000
+  test:
+    description: Runs the tests
+    run:
+      container: build-env
+      command: yarn test
+  build:
+    description: Builds the app
+    run:
+      container: build-env
+      command: yarn build
