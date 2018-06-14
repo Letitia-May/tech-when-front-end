@@ -3,7 +3,7 @@
 TechWhen is a thing, what is it? We don't know yet, but it is a thing and this is the front end of that thing.
 
 
-## Requirements
+## Requires
 * Docker
 
 ## Usage
