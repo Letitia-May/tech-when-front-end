@@ -1,4 +1,4 @@
-.App-header {
+.app-header {
   background-color: #222;
   height: 150px;
   padding: 20px;
@@ -8,12 +8,6 @@
   justify-content: center;
 }
 
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-  display: flex;
-  justify-content: center;
+.page-title {
+  margin: 1.5em;
 }
