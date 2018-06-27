@@ -23,6 +23,11 @@ tasks:
     run:
       container: build-env
       command: yarn test
+  bash:
+    description: Node Console
+    run:
+      container: build-env
+      command: bash
   build:
     description: Builds the app
     run:
