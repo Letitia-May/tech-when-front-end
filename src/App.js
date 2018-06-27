@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import ConferencesList from './conferences/ConferencesList';
 
 class App extends Component {
   render() {
@@ -11,6 +12,7 @@ class App extends Component {
         <h2 className="page-title">
           Conferences
         </h2>
+        <ConferencesList/>
       </div>
     );
   }
