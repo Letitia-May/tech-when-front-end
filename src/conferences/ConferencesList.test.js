@@ -1,7 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { shallow } from 'enzyme';
 import ConferencesList from './ConferencesList';
+import ConferenceDetail from './ConferenceDetail';
 
-// it('renders one ConferenceDetail component per conferences', () => {
-	
-// });
+describe('ConferencesList', () => {
+	it('renders one ConferenceDetail component', () => {
+		shallow(<ConferenceDetail/>);
+	});
+});

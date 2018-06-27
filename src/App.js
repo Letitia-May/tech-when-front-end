@@ -9,9 +9,7 @@ class App extends Component {
         <header className="app-header">
           <h1>TechWhen</h1>
         </header>
-        <h2 className="page-title">
-          Conferences
-        </h2>
+        <h2 className="page-title">Conferences</h2>
         <ConferencesList/>
       </div>
     );
