@@ -9,21 +9,27 @@ describe('App', () => {
     shallow(<App />);
   });
 
-  it('renders ConferencesList component', () => {
-		shallow(<ConferencesList/>);
+  it('renders ConferencesList component when conference data', () => {
+    const data = {"name": "Code1"};
+		shallow(<ConferencesList conferences={data}/>);
+  });
+
+  it('renders ConferencesList component when no conference data', () => {
+    const data = {};
+		shallow(<ConferencesList conferences={data}/>);
   });
 
   describe('view', () => {
     it('renders "TechWhen" header', () => {
-      const wrapper = shallow(<App />);
+      const rendered = shallow(<App />);
       const header = <h1>TechWhen</h1>;
-      expect(wrapper.contains(header)).toEqual(true);
+      expect(rendered.contains(header)).toEqual(true);
     });
 
     it('renders "Conferences" page title', () => {
-      const wrapper = shallow(<App />);
+      const rendered = shallow(<App />);
       const pageTitle = <h2 className="page-title">Conferences</h2>;
-      expect(wrapper.contains(pageTitle)).toEqual(true);
+      expect(rendered.contains(pageTitle)).toEqual(true);
     });
   });
 })

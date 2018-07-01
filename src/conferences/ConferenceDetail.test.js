@@ -13,7 +13,7 @@ describe('ConferenceDetail', () => {
 					"website": "www.code1.com.au"
 		};
 
-		const wrapper = shallow(<ConferenceDetail conference={data} />);
+		const rendered = shallow(<ConferenceDetail conference={data} />);
 
 		const conferenceName = <p>Conference: {data.name}</p>;
 		const startDate = <p>Start date: {data.displayStartDate}</p>;
@@ -21,10 +21,10 @@ describe('ConferenceDetail', () => {
 		const city = <p>City: {data.city}</p>;
 		const website = <p>Website: {data.website}</p>;
 
-		expect(wrapper.contains(conferenceName)).toEqual(true);
-		expect(wrapper.contains(startDate)).toEqual(true);
-		expect(wrapper.contains(endDate)).toEqual(true);
-		expect(wrapper.contains(city)).toEqual(true);
-		expect(wrapper.contains(website)).toEqual(true);
+		expect(rendered.contains(conferenceName)).toEqual(true);
+		expect(rendered.contains(startDate)).toEqual(true);
+		expect(rendered.contains(endDate)).toEqual(true);
+		expect(rendered.contains(city)).toEqual(true);
+		expect(rendered.contains(website)).toEqual(true);
 	});
 });

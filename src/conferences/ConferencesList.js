@@ -4,17 +4,11 @@ import ConferenceDetail from './ConferenceDetail';
 
 class ConferencesList extends Component {
   render() {
-    const data = {
-      "name": "Code1",
-      "displayStartDate": "19 Jul 2018",
-      "displayEndDate": "10 Jul 2018",
-      "city": "Melbourne",
-      "website": "www.code1.com.au"
-    };
+    const {conferences} = this.props;
 
     return (
       <div className="conferences-list">
-        <ConferenceDetail conference={data}/>
+         {Object.keys(conferences).length > 0 && <ConferenceDetail conference={conferences}/>}
       </div>
     );
   }
