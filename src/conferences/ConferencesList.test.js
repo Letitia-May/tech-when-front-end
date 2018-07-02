@@ -6,15 +6,15 @@ import ConferenceDetail from './ConferenceDetail';
 
 describe('ConferencesList', () => {
 	it('renders one ConferenceDetail component when there is a conference', () => {
-		const props = {"name": "Code1"}
-		const rendered = mount(<ConferencesList conferences={props}/>);
-		
+		const data = [{"name": "Code1"}];
+		const rendered = mount(<ConferencesList conferences={data}/>);
+
 		expect(rendered.find(ConferenceDetail).length).toEqual(1);
 	});
 
 	it('does not render ConferenceDetail component when there is no conference', () => {
-		const props = {};
-		const rendered = mount(<ConferencesList conferences={props}/>);
+		const data = [];
+		const rendered = mount(<ConferencesList conferences={data}/>);
 
 		expect(rendered.find(ConferenceDetail).length).toEqual(0);
 	});

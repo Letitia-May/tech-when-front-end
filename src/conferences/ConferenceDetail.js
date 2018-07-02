@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class ConferenceDetail extends Component {
   render() {
-		const {conference} = this.props;
+    const {conference} = this.props;
 
     return (
       <div className="conference-detail">

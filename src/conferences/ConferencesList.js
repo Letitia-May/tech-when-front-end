@@ -8,7 +8,7 @@ class ConferencesList extends Component {
 
     return (
       <div className="conferences-list">
-         {Object.keys(conferences).length > 0 && <ConferenceDetail conference={conferences}/>}
+         {conferences.length > 0 && <ConferenceDetail conference={conferences[0]}/>}
       </div>
     );
   }
