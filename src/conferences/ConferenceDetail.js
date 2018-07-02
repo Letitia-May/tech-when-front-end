@@ -6,11 +6,11 @@ class ConferenceDetail extends Component {
 
     return (
       <div className="conference-detail">
-        <p>Conference: {conference.name}</p>
-        <p>Start date: {conference.displayStartDate}</p>
-        <p>End date: {conference.displayEndDate}</p>
-        <p>City: {conference.city}</p>
-        <p>Website: {conference.website}</p>
+        <p className="name">Conference: {conference.name}</p>
+        <p className="startDate">Start date: {conference.displayStartDate}</p>
+        <p className="endDate">End date: {conference.displayEndDate}</p>
+        <p className="city">City: {conference.city}</p>
+        <p className="website">Website: {conference.website}</p>
       </div>
 		);
   }

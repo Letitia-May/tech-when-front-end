@@ -4,27 +4,42 @@ import { shallow } from 'enzyme';
 import ConferenceDetail from './ConferenceDetail';
 
 describe('ConferenceDetail', () => {	
-	it('renders conference details', () => {
-		const data = {
-					"name": "Code1",
-					"displayStartDate": "19 Jul 2018",
-					"displayEndDate": "10 Jul 2018",
-					"city": "Melbourne",
-					"website": "www.code1.com.au"
+	let data;
+	let rendered;
+
+	beforeEach(() => {
+		data = {
+			"name": "Code1",
+			"displayStartDate": "19 Jul 2018",
+			"displayEndDate": "10 Jul 2018",
+			"city": "Melbourne",
+			"website": "www.code1.com.au"
 		};
+		rendered = shallow(<ConferenceDetail conference={data} />);
+	});
 
-		const rendered = shallow(<ConferenceDetail conference={data} />);
+	it('renders conference name', () => {
+		const conferenceName = 'Conference: Code1';
+		expect(rendered.find('.name').text()).toEqual(conferenceName);
+	});
 
-		const conferenceName = <p>Conference: {data.name}</p>;
-		const startDate = <p>Start date: {data.displayStartDate}</p>;
-		const endDate = <p>End date: {data.displayEndDate}</p>;
-		const city = <p>City: {data.city}</p>;
-		const website = <p>Website: {data.website}</p>;
+	it('renders conference start date', () => {
+		const startDate = 'Start date: 19 Jul 2018';
+		expect(rendered.find('.startDate').text()).toEqual(startDate);
+	});
 
-		expect(rendered.contains(conferenceName)).toEqual(true);
-		expect(rendered.contains(startDate)).toEqual(true);
-		expect(rendered.contains(endDate)).toEqual(true);
-		expect(rendered.contains(city)).toEqual(true);
-		expect(rendered.contains(website)).toEqual(true);
+	it('renders conference end date', () => {
+		const endDate = 'End date: 10 Jul 2018';
+		expect(rendered.find('.endDate').text()).toEqual(endDate);
+	});
+
+	it('renders conference city', () => {
+		const city = 'City: Melbourne';
+		expect(rendered.find('.city').text()).toEqual(city);
+	});
+
+	it('renders conference website', () => {
+		const website = 'Website: www.code1.com.au';
+		expect(rendered.find('.website').text()).toEqual(website);
 	});
 });
