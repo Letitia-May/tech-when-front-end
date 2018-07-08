@@ -5,11 +5,11 @@ import ConferencesList from './ConferencesList';
 import ConferenceDetail from './ConferenceDetail';
 
 describe('ConferencesList', () => {
-	it('renders one ConferenceDetail component when there is a conference', () => {
-		const data = [{"name": "Code1"}];
+	it('renders a ConferenceDetail component for each conference', () => {
+		const data = [{"name": "Code1"}, {"name": "Code2"}, {"name": "Code3"}];
 		const rendered = mount(<ConferencesList conferences={data}/>);
 
-		expect(rendered.find(ConferenceDetail).length).toEqual(1);
+		expect(rendered.find(ConferenceDetail).length).toEqual(3);
 	});
 
 	it('does not render ConferenceDetail component when there is no conference', () => {

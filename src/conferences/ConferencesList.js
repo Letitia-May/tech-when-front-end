@@ -8,7 +8,9 @@ class ConferencesList extends Component {
 
     return (
       <div className="conferences-list">
-         {conferences.length > 0 && <ConferenceDetail conference={conferences[0]}/>}
+        {conferences.map(function(conf, index) {
+          return conferences.length > 0 && <ConferenceDetail key={index} conference={conf}/>
+        })}
       </div>
     );
   }
