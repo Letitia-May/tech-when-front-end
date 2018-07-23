@@ -8,6 +8,8 @@ containers:
         container: /usr/src/app
         options: cached
     working_directory: /usr/src/app
+    environment:
+      - REACT_APP_CONFERENCES_ENDPOINT=$CONFERENCES_URL
 
 tasks: 
   run:
@@ -15,8 +17,6 @@ tasks:
     run:
       container: build-env
       command: yarn start
-      environment:
-        - REACT_APP_CONFERENCES_ENDPOINT=ADD_URL
       ports:
         - local: 3000
           container: 3000
@@ -28,8 +28,6 @@ tasks:
   bash:
     description: Node Console
     run:
-      environment:
-        - REACT_APP_CONFERENCES_ENDPOINT=ADD_URL
       container: build-env
       command: bash
   build:
