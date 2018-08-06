@@ -1,8 +1,8 @@
 import { CONFERENCES_ENDPOINT } from './config';
+import { request } from './request';
 
-// write tests
 export const findAll = () => {
-	return fetch(CONFERENCES_ENDPOINT)
+	return request(CONFERENCES_ENDPOINT)
 		.then(response => response.json())
 		.then(body => ({data: body}))
 		.catch(error => ({data: []}));

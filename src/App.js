@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import ConferencesList from './conferences/ConferencesList';
-import { findAll } from './conferencesRepository'
+import { findAll } from './conferencesRepository';
+
 
 class App extends Component {
   constructor(props) {
