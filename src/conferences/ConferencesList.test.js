@@ -1,6 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { shallow, mount } from 'enzyme';
+import { mount } from 'enzyme';
 import ConferencesList from './ConferencesList';
 import ConferenceDetail from './ConferenceDetail';
 

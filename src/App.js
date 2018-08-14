@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import ConferencesList from './conferences/ConferencesList';
 import { findAll } from './conferencesRepository';
-
+import { request } from './request';
 
 class App extends Component {
   constructor(props) {
@@ -11,10 +11,10 @@ class App extends Component {
   }
 
   componentDidMount() {
-    findAll()
-    .then(conferences => {
-      this.setState(conferences);
-    });
+    findAll(request)
+      .then(conferences => {
+        this.setState(conferences);
+      });
   }
 
   render() {
