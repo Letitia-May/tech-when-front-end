@@ -9,6 +9,8 @@
     "regenerator-runtime": "^0.12.1"
   },
   "dependencies": {
+    "@material-ui/core": "^3.0.3",
+    "@material-ui/icons": "^3.0.1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "react": "^16.4.0",
