@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import App from './App';
 import ConferencesList from './conferences/ConferencesList';
 
@@ -20,15 +20,15 @@ describe('App', () => {
 
   describe('view', () => {
     it('renders "TechWhen" header', () => {
-      const rendered = shallow(<App />);
+      const rendered = mount(<App />);
       const header = 'TechWhen';
-		  expect(rendered.find('h1').text()).toEqual(header);
+		  expect(rendered.find('h2').text()).toEqual(header);
     });
 
     it('renders "Conferences" page title', () => {
-      const rendered = shallow(<App />);
+      const rendered = mount(<App />);
       const pageTitle = 'Conferences';
-		  expect(rendered.find('.page-title').text()).toEqual(pageTitle);
+		  expect(rendered.find('h1').text()).toEqual(pageTitle);
     });
   });
-})
+});

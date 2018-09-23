@@ -1,9 +1,13 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import ConferencesList from './ConferencesList';
 import ConferenceDetail from './ConferenceDetail';
 
 describe('ConferencesList', () => {
+	it('renders without crashing', () => {
+    shallow(<ConferencesList />);
+	});
+
 	it('renders a ConferenceDetail component for each conference', () => {
 		const data = [{"name": "Code1"}, {"name": "Code2"}, {"name": "Code3"}];
 		const rendered = mount(<ConferencesList conferences={data}/>);

@@ -1,8 +1,21 @@
 import React, { Component } from 'react';
-import './App.css';
 import ConferencesList from './conferences/ConferencesList';
 import { findAll } from './conferencesRepository';
 import { request } from './request';
+import AppBar from '@material-ui/core/AppBar';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
+
+const styles = theme => ({
+  appBar: {
+    position: 'relative',
+  },
+  pageHeader: {
+    padding: theme.spacing.unit * 3
+  }
+});
 
 class App extends Component {
   constructor(props) {
@@ -18,16 +31,25 @@ class App extends Component {
   }
 
   render() {
+    const { classes } = this.props;
+
     return (
-      <div className="app">
-        <header className="app-header">
-          <h1>TechWhen</h1>
-        </header>
-        <h2 className="page-title">Conferences</h2>
+      <React.Fragment>
+        <CssBaseline />
+        <AppBar position="static" className={classes.appBar}>
+          <Toolbar>
+            <Typography variant="title" color="inherit" noWrap>
+              TechWhen
+            </Typography>
+          </Toolbar>
+        </AppBar>
+        <Typography variant="display1" className={classes.pageHeader} gutterBottom>
+          Conferences
+        </Typography>
         <ConferencesList conferences={this.state.data}/>
-      </div>
+      </React.Fragment>
     );
   }
 }
 
-export default App;
+export default withStyles(styles)(App);

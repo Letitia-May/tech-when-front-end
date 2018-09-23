@@ -1,20 +1,46 @@
 import React, { Component } from 'react';
-import './ConferenceDetail.css';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
+
+const styles = () => ({
+  card: {
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  cardContent: {
+    flexGrow: 1,
+  },
+});
 
 class ConferenceDetail extends Component {
   render() {
-    const {conference} = this.props;
+    const {conference, classes} = this.props;
 
     return (
-      <div className="conference-detail">
-        <p className="name">Conference: {conference.name}</p>
-        <p className="startDate">Start date: {conference.displayStartDate}</p>
-        <p className="endDate">End date: {conference.displayEndDate}</p>
-        <p className="city">City: {conference.city}</p>
-        <p className="website">Website: {conference.website}</p>
-      </div>
+      <Card className={classes.card}>
+        <CardContent className={classes.cardContent}>
+          <Typography gutterBottom variant="headline" component="h2">
+            {conference.name}
+          </Typography>
+          <Typography>
+            Start date: {conference.displayStartDate}
+          </Typography>
+          <Typography>
+            End date: {conference.displayEndDate}
+          </Typography>
+          <Typography>
+            City: {conference.city}
+          </Typography>
+          <Typography>
+            {conference.website}
+          </Typography>
+        </CardContent>
+      </Card>
 		);
   }
 }
 
-export default ConferenceDetail;
+export default withStyles(styles)(ConferenceDetail);
