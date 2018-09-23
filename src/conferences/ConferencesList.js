@@ -15,9 +15,6 @@ const styles = theme => ({
       marginRight: 'auto',
     },
   },
-  // cardGrid: {
-  //   padding: `${theme.spacing.unit * 8}px 0`,
-  // }
 });
 
 class ConferencesList extends Component {
@@ -27,20 +24,13 @@ class ConferencesList extends Component {
     return (
       <div className={classNames(classes.layout, classes.cardGrid)}>
         <Grid container spacing={40}>
-          {/* {conferences.map(function(conf, index) { */}
-          {conferences.map(conf => (
-            <Grid item key={conf} sm={6} md={4} lg={3}>
+          {conferences.map(function(conf, index) {
+            return conferences.length > 0 && <Grid item key={index} sm={6} md={4} lg={4}>
               <ConferenceDetail conference={conf} className={classes.card}/>
             </Grid>
-          ))}
+          })}
         </Grid>
       </div>
-
-      // <div className="conferences-list">
-      //   {conferences.map(function(conf, index) {
-      //     return conferences.length > 0 && <ConferenceDetail key={index} conference={conf}/>
-      //   })}
-      // </div>
     );
   }
 }
