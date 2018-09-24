@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import ConferenceDetail from './ConferenceDetail';
 
 describe('ConferenceDetail', () => {	
@@ -21,32 +21,32 @@ describe('ConferenceDetail', () => {
   });
 
 	it('renders conference name', () => {
-		rendered = mount(<ConferenceDetail conference={data} />);
+		rendered = shallow(<ConferenceDetail conference={data} />);
 		const conferenceName = 'Code1';
-		expect(rendered.find('h2').text()).toEqual(conferenceName);
+		expect(rendered.html().toString()).toContain(conferenceName);
 	});
 
 	it('renders conference start date', () => {
-		rendered = mount(<ConferenceDetail conference={data} />);
+		rendered = shallow(<ConferenceDetail conference={data} />);
 		const startDate = 'Start date: 19 Jul 2018';
-		expect(rendered.find('p').at(0).text()).toEqual(startDate);
+		expect(rendered.html().toString()).toContain(startDate);
 	});
 
 	it('renders conference end date', () => {
-		rendered = mount(<ConferenceDetail conference={data} />);
+		rendered = shallow(<ConferenceDetail conference={data} />);
 		const endDate = 'End date: 10 Jul 2018';
-		expect(rendered.find('p').at(1).text()).toEqual(endDate);
+		expect(rendered.html().toString()).toContain(endDate);
 	});
 
 	it('renders conference city', () => {
-		rendered = mount(<ConferenceDetail conference={data} />);
+		rendered = shallow(<ConferenceDetail conference={data} />);
 		const city = 'City: Melbourne';
-		expect(rendered.find('p').at(2).text()).toEqual(city);
+		expect(rendered.html().toString()).toContain(city);
 	});
 
 	it('renders conference website', () => {
-		rendered = mount(<ConferenceDetail conference={data} />);
+		rendered = shallow(<ConferenceDetail conference={data} />);
 		const website = 'www.code1.com.au';
-		expect(rendered.find('p').at(3).text()).toEqual(website);
+		expect(rendered.html().toString()).toContain(website);
 	});
 });

@@ -34,7 +34,7 @@ class App extends Component {
     const { classes } = this.props;
 
     return (
-      <React.Fragment>
+      <div>
         <CssBaseline />
         <AppBar position="static" className={classes.appBar}>
           <Toolbar>
@@ -47,7 +47,7 @@ class App extends Component {
           Conferences
         </Typography>
         <ConferencesList conferences={this.state.data}/>
-      </React.Fragment>
+      </div>
     );
   }
 }
