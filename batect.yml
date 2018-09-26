@@ -25,6 +25,9 @@ tasks:
     run:
       container: build-env
       command: yarn test
+      environment:
+        - REACT_APP_CONFERENCES_ENDPOINT=http://good.luck.with.this.com
+
   bash:
     description: Node Console
     run:
