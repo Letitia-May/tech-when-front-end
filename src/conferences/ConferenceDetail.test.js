@@ -12,7 +12,7 @@ describe('ConferenceDetail', () => {
 			"displayStartDate": "19 Jul 2018",
 			"displayEndDate": "10 Jul 2018",
 			"city": "Melbourne",
-			"website": "www.code1.com.au"
+			"website": "https://www.code1.com.au"
 		};
 	});
 
@@ -44,9 +44,9 @@ describe('ConferenceDetail', () => {
 		expect(rendered.html().toString()).toContain(city);
 	});
 
-	it('renders conference website', () => {
+	it('renders with link to conference website', () => {
 		rendered = shallow(<ConferenceDetail conference={data} />);
-		const website = 'www.code1.com.au';
-		expect(rendered.html().toString()).toContain(website);
+		const websiteLink = 'href="https://www.code1.com.au"';
+		expect(rendered.html().toString()).toContain(websiteLink);
 	});
 });
