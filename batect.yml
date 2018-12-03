@@ -11,6 +11,18 @@ containers:
     environment:
       REACT_APP_CONFERENCES_ENDPOINT: $CONFERENCES_URL
 
+  deploy-env:
+    build_directory: dev-infrastructure
+    volumes:
+      - local: .
+        container: /usr/src/app
+        options: cached
+    working_directory: /usr/src/app
+    environment:
+      AWS_ACCESS_KEY_ID: $aws_access_key_id
+      AWS_SECRET_ACCESS_KEY: $aws_secret_access_key
+      AWS_DEFAULT_REGION: "ap-southeast-2"
+
 tasks: 
   run:
     description: Runs the app
@@ -20,6 +32,7 @@ tasks:
       ports:
         - local: 3000
           container: 3000
+
   test:
     description: Runs the tests
     run:
@@ -31,10 +44,17 @@ tasks:
   bash:
     description: Node Console
     run:
-      container: build-env
+      container: deploy-env
       command: bash
+
   build:
     description: Builds the app
     run:
       container: build-env
       command: yarn build
+
+  deploy:
+    description: Deploys the app to S3 bucket
+    run:
+      container: deploy-env
+      command: ./deploy.sh

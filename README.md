@@ -36,3 +36,15 @@ export CONFERENCES_URL=<CONFERENCES_URL>
 ```
 
 Open [http://localhost:3000](http://localhost:3000) to view the app in the browser.
+
+### Deploying the application
+Set the AWS credentials as environment variables
+
+```
+export aws_access_key_id=<aws_access_key_id>
+export aws_secret_access_key=<aws_secret_access_key>
+```
+
+```
+./batect deploy
+```
